@@ -1,0 +1,26 @@
+<h3>Student Details</h3>
+<div class="input" [formGroup]="studentForm">
+  <input type="text" placeholder="Enter the Name" formControlName="name" /><br />
+  <input type="number" placeholder="Enter the ID" formControlName="id" /><br />
+  <input type="number" placeholder="Enter the Age" formControlName="age" /><br />
+  <input type="text" placeholder="Enter the Department" formControlName="department" /><br />
+  <button (click)="save()">Save</button>
+</div>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>ID</th>
+    <th>Age</th>
+    <th>Department</th>
+    <th>Action</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let details of studentDetails; let i = index">
+      <td>{{ details.name }}</td>
+      <td>{{ details.id }}</td>
+      <td>{{ details.age }}</td>
+      <td>{{ details.department }}</td>
+      <td><button (click)="delete(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
